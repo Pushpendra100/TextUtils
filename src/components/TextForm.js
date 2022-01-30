@@ -15,6 +15,16 @@ export default function TextForm(props) {
         let newText ='';
         setText(newText);
     }
+    const handleCopyClick = ()=>{
+     let text = document.getElementById('myBox');
+    //  text.select();        // this line of code selects the textarea thus it is showing the blue border
+     navigator.clipboard.writeText(text.value);  // this is main line of code which is copying text.value to the clipboard
+
+    }
+    const handleExtraSpaces = ()=>{
+        let newText = text.split(/[ ]+/);   //make it array by splitting on one and more than one spaces
+        setText(newText.join(" "));           //then join the elements of array by one space
+    }
     const handleOnChange = (event)=>{
         // console.log("onChange");
         setText(event.target.value)
@@ -32,6 +42,8 @@ export default function TextForm(props) {
             <button className='btn btn-primary mx-1' onClick={handleUpClick}>Convert to Uppercase</button>
             <button className='btn btn-primary mx-1' onClick={handleLoClick}>Convert to Lowercase</button>
             <button className='btn btn-primary mx-1' onClick={handleClearClick}>Clear text</button>
+            <button className='btn btn-primary mx-1' onClick={handleCopyClick}>Copy text</button>
+            <button className='btn btn-primary mx-1' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
             </div>
             <div className="container my-2">
                 <h2>Your Text Summary</h2>
