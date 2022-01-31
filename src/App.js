@@ -7,10 +7,8 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Routes,
-  Link
+  Routes
 } from "react-router-dom";
 
 function App() {
