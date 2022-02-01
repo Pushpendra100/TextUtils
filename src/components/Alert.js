@@ -11,10 +11,13 @@ export default function Alert(props) {
 
 
 
-  return (
-// this happens because all the jsx will be converted to javascript calls
-      props.alert &&      <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">     
+  return (<div style={{height:'50px'}}>
+
+{/*  this happens because all the jsx will be converted to javascript calls */}
+     { props.alert &&      <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">     
          <strong>{capitalize(props.alert.type)}</strong> : {props.alert.msg}
+  </div>
+      }
   </div>
   );
 }
